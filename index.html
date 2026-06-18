@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACHEIKH YOUNOUS ABOUKARY | AI Researcher | Lecturer | Software Developer</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { light: '#2563eb', dark: '#3b82f6' },
+            secondary: { light: '#10b981', dark: '#34d399' }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-in-out',
+            'slide-up': 'slideUp 0.6s ease-out'
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .gradient-text {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .light .gradient-text { background-image: linear-gradient(45deg, #2563eb, #10b981); }
+    .dark .gradient-text { background-image: linear-gradient(45deg, #60a5fa, #34d399); }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: currentColor;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-5px); }
+    .lang-btn.active {
+      background-color: #2563eb;
+      color: #fff;
+      border-color: #2563eb;
+    }
+  </style>
+</head>
+
+<body class="light bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- Header -->
+  <header class="fixed w-full z-50 bg-white/85 dark:bg-gray-900/85 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+      <nav class="flex items-center justify-between">
+        <a href="#home" class="text-xl md:text-2xl font-bold gradient-text">ACHEIKH YOUNOUS</a>
+
+        <div class="hidden md:flex space-x-7 text-sm font-medium">
+          <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
+          <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+          <a href="#education" class="nav-link" data-i18n="nav_education">Education</a>
+          <a href="#experience" class="nav-link" data-i18n="nav_experience">Experience</a>
+          <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
+          <a href="#teaching" class="nav-link" data-i18n="nav_teaching">Teaching</a>
+          <a href="#publications" class="nav-link" data-i18n="nav_publications">Publications</a>
+          <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-3">
+          <div class="hidden sm:flex items-center gap-1 border border-gray-300 dark:border-gray-700 rounded-full p-1">
+            <button id="btn-en" class="lang-btn active px-3 py-1 text-xs rounded-full border border-transparent">EN</button>
+            <button id="btn-fr" class="lang-btn px-3 py-1 text-xs rounded-full border border-transparent">FR</button>
+          </div>
+
+          <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+          </button>
+
+          <button id="mobile-menu-button" class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+      <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+        <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+        <a href="#education" class="nav-link" data-i18n="nav_education">Education</a>
+        <a href="#experience" class="nav-link" data-i18n="nav_experience">Experience</a>
+        <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
+        <a href="#teaching" class="nav-link" data-i18n="nav_teaching">Teaching</a>
+        <a href="#publications" class="nav-link" data-i18n="nav_publications">Publications</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+        <div class="flex gap-2 pt-2">
+          <button id="btn-en-mobile" class="lang-btn active px-3 py-1 text-xs rounded-full border">EN</button>
+          <button id="btn-fr-mobile" class="lang-btn px-3 py-1 text-xs rounded-full border">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex items-center pt-24">
+    <div class="container mx-auto px-6 py-20">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 animate-fade-in">
+          <p class="text-primary-light dark:text-primary-dark font-semibold mb-3" data-i18n="hero_small">Teaching, Research and Innovation in AI</p>
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            <span data-i18n="hero_hi">Hi, I'm</span>
+            <span class="gradient-text">ACHEIKH YOUNOUS ABOUKARY</span>
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-semibold mb-6" data-i18n="hero_title">AI Researcher | Lecturer | Software Developer</h2>
+          <p class="text-lg mb-8 text-gray-600 dark:text-gray-300 max-w-xl" data-i18n="hero_desc">
+            I am a lecturer and AI researcher from Chad, specializing in Artificial Intelligence, Natural Language Processing and Software Engineering.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="./pdf/CV_ACHEIKH_YOUNOUS.pdf" target="_blank" class="px-6 py-3 bg-primary-light dark:bg-primary-dark text-white rounded-lg hover:opacity-90">
+              <i class="fas fa-download mr-2"></i><span data-i18n="download_cv">Download CV</span>
+            </a>
+            <a href="#projects" class="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+              <span data-i18n="view_projects">View Projects</span>
+            </a>
+            <a href="#contact" class="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+              <span data-i18n="contact_me">Contact Me</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:w-1/2 flex justify-center animate-slide-up">
+          <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark shadow-xl">
+            <img src="./images/photo.jpg" alt="ACHEIKH YOUNOUS ABOUKARY" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center"><span data-i18n="about_title">About</span> <span class="gradient-text" data-i18n="about_me">Me</span></h2>
+
+      <div class="max-w-4xl mx-auto bg-white dark:bg-gray-700 p-8 rounded-xl shadow-sm">
+        <h3 class="text-2xl font-semibold mb-4" data-i18n="who_title">Who I Am</h3>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed" data-i18n="about_desc">
+          I am a lecturer and AI researcher from Chad with a strong interest in Natural Language Processing, Large Language Models, Speech Technologies and Software Engineering. My current research focuses on low-resource African languages, particularly Chadian Arabic, and the development of AI systems for education and digital inclusion.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+          <div class="p-5 rounded-lg bg-gray-50 dark:bg-gray-800">
+            <i class="fas fa-brain text-primary-light dark:text-primary-dark text-2xl mb-3"></i>
+            <h4 class="font-semibold mb-2">AI & NLP</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="about_card_1">Research on low-resource languages and speech technologies.</p>
+          </div>
+          <div class="p-5 rounded-lg bg-gray-50 dark:bg-gray-800">
+            <i class="fas fa-chalkboard-teacher text-primary-light dark:text-primary-dark text-2xl mb-3"></i>
+            <h4 class="font-semibold mb-2" data-i18n="teaching_word">Teaching</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="about_card_2">Computer science courses, tutorials and academic materials.</p>
+          </div>
+          <div class="p-5 rounded-lg bg-gray-50 dark:bg-gray-800">
+            <i class="fas fa-code text-primary-light dark:text-primary-dark text-2xl mb-3"></i>
+            <h4 class="font-semibold mb-2" data-i18n="software_word">Software</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="about_card_3">Software engineering, web development and academic tools.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center"><span data-i18n="education_title">Education</span></h2>
+
+      <div class="max-w-5xl mx-auto space-y-8">
+
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm p-8 card-hover">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <i class="fas fa-graduation-cap text-primary-light dark:text-primary-dark text-xl"></i>
+                <h3 class="text-2xl font-bold" data-i18n="msc_title">Master of Science in Artificial Intelligence</h3>
+              </div>
+              <p class="font-medium text-gray-700 dark:text-gray-300" data-i18n="msc_school">University of Dschang, Cameroon</p>
+            </div>
+            <span class="text-sm border border-primary-light text-primary-light dark:text-primary-dark dark:border-primary-dark rounded-md px-3 py-1">2023 – 2025</span>
+          </div>
+
+          <div class="flex flex-wrap gap-5 mt-5 text-sm text-gray-600 dark:text-gray-300">
+            <span><i class="far fa-calendar-alt mr-2"></i>2023 – 2025</span>
+            <span><i class="far fa-star mr-2"></i><span data-i18n="msc_mention">Mention: Very Good</span></span>
+            <span><i class="fas fa-microscope mr-2"></i>NLP, LLMs, MDE</span>
+          </div>
+
+          <p class="mt-5 text-gray-600 dark:text-gray-300" data-i18n="msc_desc">
+            Master's degree focused on artificial intelligence, machine learning, natural language processing and software engineering.
+          </p>
+
+          <div class="mt-7 bg-gray-50 dark:bg-gray-700 rounded-lg p-5">
+            <h4 class="font-semibold mb-3"><i class="far fa-lightbulb mr-2"></i><span data-i18n="highlights">Highlights</span></h4>
+            <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <li><span class="text-primary-light dark:text-primary-dark mr-2">•</span><span data-i18n="msc_h1">Master thesis on automatic Java code generation from UML class diagrams using MDE and LLMs.</span></li>
+              <li><span class="text-primary-light dark:text-primary-dark mr-2">•</span><span data-i18n="msc_h2">Research interests: NLP, LLMs, speech technologies and low-resource languages.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm p-8 card-hover">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <i class="fas fa-graduation-cap text-primary-light dark:text-primary-dark text-xl"></i>
+                <h3 class="text-2xl font-bold" data-i18n="licence_title">Bachelor's Degree in Computer Science</h3>
+              </div>
+              <p class="font-medium text-gray-700 dark:text-gray-300" data-i18n="licence_school">University of N'Djamena, Chad</p>
+            </div>
+            <span class="text-sm border border-primary-light text-primary-light dark:text-primary-dark dark:border-primary-dark rounded-md px-3 py-1">2019 – 2022</span>
+          </div>
+
+          <div class="flex flex-wrap gap-5 mt-5 text-sm text-gray-600 dark:text-gray-300">
+            <span><i class="far fa-calendar-alt mr-2"></i>2019 – 2022</span>
+            <span><i class="fas fa-laptop-code mr-2"></i>Computer Science</span>
+          </div>
+
+          <p class="mt-5 text-gray-600 dark:text-gray-300" data-i18n="licence_desc">
+            Undergraduate training in programming, databases, algorithms, information systems and software development.
+          </p>
+
+          <div class="mt-7 bg-gray-50 dark:bg-gray-700 rounded-lg p-5">
+            <h4 class="font-semibold mb-3"><i class="far fa-lightbulb mr-2"></i><span data-i18n="highlights">Highlights</span></h4>
+            <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <li><span class="text-primary-light dark:text-primary-dark mr-2">•</span><span data-i18n="licence_h1">Solid foundations in programming, databases and software engineering.</span></li>
+              <li><span class="text-primary-light dark:text-primary-dark mr-2">•</span><span data-i18n="licence_h2">Development of academic and practical computer science projects.</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center">
+            Professional <span class="gradient-text">Experience</span>
+        </h2>
+
+        <!-- UNISAF -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="text-2xl font-bold">
+                        Lecturer in Computer Science
+                    </h3>
+
+                    <p class="text-lg text-blue-600">
+                        University of Sahara of Faya (UNISAF)
+                    </p>
+
+                    <p class="text-gray-500 mt-2">
+                        2026 – Present
+                    </p>
+                </div>
+
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg">
+                    Current
+                </span>
+            </div>
+
+            <div class="mt-6">
+                <h4 class="font-semibold mb-2">Courses Taught</h4>
+
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Introduction to Computer Science</li>
+                    <li>Software Tools</li>
+                    <li>Procedural Programming in C</li>
+                    <li>Database Systems</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Université d'Abéché -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="text-2xl font-bold">
+                        Teaching Assistant / Lecturer
+                    </h3>
+
+                    <p class="text-lg text-blue-600">
+                        University of Abéché
+                    </p>
+
+                    <p class="text-gray-500 mt-2">
+                        2024 – 2025
+                    </p>
+                </div>
+
+                <span class="px-4 py-2 bg-green-100 text-green-700 rounded-lg">
+                    Completed
+                </span>
+            </div>
+
+            <div class="mt-6">
+                <h4 class="font-semibold mb-2">Teaching Activities</h4>
+
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Object-Oriented Software Engineering</li>
+                    <li>Multimedia Interfaces</li>
+                    <li>Object-Oriented Design and Implementation</li>
+                    <li>Practical sessions and student supervision</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+  </section>
+  <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center" data-i18n="experience_title">Experience</h2>
+
+      <div class="max-w-5xl mx-auto space-y-8">
+        <div class="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm p-8 card-hover">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <i class="fas fa-briefcase text-secondary-light dark:text-secondary-dark text-xl"></i>
+                <h3 class="text-2xl font-bold" data-i18n="exp1_title">Lecturer in Computer Science</h3>
+              </div>
+              <p class="font-medium text-gray-700 dark:text-gray-300" data-i18n="exp1_org">University of Sahara of Faya (UNISAF), Chad</p>
+            </div>
+            <span class="text-sm border border-secondary-light text-secondary-light dark:text-secondary-dark dark:border-secondary-dark rounded-md px-3 py-1" data-i18n="present">Present</span>
+          </div>
+
+          <p class="mt-5 text-gray-600 dark:text-gray-300" data-i18n="exp1_desc">
+            Teaching computer science courses and preparing academic materials including courses, tutorials, practical work and exams.
+          </p>
+
+          <div class="mt-7 bg-gray-50 dark:bg-gray-800 rounded-lg p-5">
+            <h4 class="font-semibold mb-3"><i class="fas fa-book-open mr-2"></i><span data-i18n="courses">Courses</span></h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm">Programming in C</span>
+              <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm">Databases / SQL</span>
+              <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm">Software Tools</span>
+              <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm">Computer Science Fundamentals</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm p-8 card-hover">
+          <div class="flex items-center gap-3 mb-2">
+            <i class="fas fa-code text-secondary-light dark:text-secondary-dark text-xl"></i>
+            <h3 class="text-2xl font-bold" data-i18n="exp2_title">Software Developer</h3>
+          </div>
+          <p class="mt-4 text-gray-600 dark:text-gray-300" data-i18n="exp2_desc">
+            Development of web and desktop applications, including school management systems and academic digital tools.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center"><span data-i18n="projects_title">Featured Projects</span></h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover">
+          <div class="p-6">
+            <i class="fas fa-microphone-alt text-4xl text-primary-light dark:text-primary-dark mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">ChadVoice</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="project_chadvoice">
+              Speech dataset for Chadian Arabic towards speech recognition and French translation systems.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Python</span>
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Whisper</span>
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">NLP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover">
+          <div class="p-6">
+            <i class="fas fa-diagram-project text-4xl text-primary-light dark:text-primary-dark mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">UML2Code LLM</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="project_uml">
+              Automatic Java code generation from UML class diagrams using a hybrid MDE and LLM approach.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Java</span>
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Python</span>
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">LLMs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover">
+          <div class="p-6">
+            <i class="fas fa-school text-4xl text-primary-light dark:text-primary-dark mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2" data-i18n="project_school_title">School Management System</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="project_school">
+              A management system deployed for schools, covering students, classes, results and administration.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Django</span>
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Bootstrap</span>
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">SQLite</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover">
+          <div class="p-6">
+            <i class="fas fa-network-wired text-4xl text-primary-light dark:text-primary-dark mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">UNISAF Digital Sahara 2030</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="project_unisaf">
+              Digital transformation initiative for e-learning, digital library and AI infrastructure at UNISAF.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">E-learning</span>
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">Cloud</span>
+              <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching -->
+  <section id="teaching" class="py-20 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center" data-i18n="teaching_title">Teaching Materials</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="./pdf/programmation-c.pdf" target="_blank" class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-sm card-hover">
+          <i class="fas fa-file-pdf text-3xl text-red-500 mb-4"></i>
+          <h3 class="font-bold mb-2">Programming in C</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="pdf_course">Course PDF / TD / Exams</p>
+        </a>
+
+        <a href="./pdf/sgbd.pdf" target="_blank" class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-sm card-hover">
+          <i class="fas fa-database text-3xl text-primary-light dark:text-primary-dark mb-4"></i>
+          <h3 class="font-bold mb-2">Database Systems</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="pdf_course">Course PDF / TD / Exams</p>
+        </a>
+
+        <a href="./pdf/initiation-informatique.pdf" target="_blank" class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-sm card-hover">
+          <i class="fas fa-laptop text-3xl text-primary-light dark:text-primary-dark mb-4"></i>
+          <h3 class="font-bold mb-2">Introduction to Computing</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="pdf_course">Course PDF / TD / Exams</p>
+        </a>
+
+        <a href="./pdf/outils-logiciels.pdf" target="_blank" class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-sm card-hover">
+          <i class="fas fa-tools text-3xl text-primary-light dark:text-primary-dark mb-4"></i>
+          <h3 class="font-bold mb-2">Software Tools</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="pdf_course">Course PDF / TD / Exams</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center"><span data-i18n="skills_title">Skills</span></h2>
+
+      <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-3">
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">Python</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">Java</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">C Programming</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">SQL</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">Machine Learning</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">Deep Learning</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">NLP</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">LLMs</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">Software Engineering</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">Django</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">Git</span>
+        <span class="px-4 py-2 bg-white dark:bg-gray-800 shadow-sm rounded-full">LaTeX</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications" class="py-20 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center" data-i18n="publications_title">Research & Publications</h2>
+
+      <div class="max-w-5xl mx-auto space-y-6">
+        <div class="bg-white dark:bg-gray-700 p-7 rounded-xl shadow-sm">
+          <h3 class="text-xl font-bold mb-2">ChadVoice: Building a Speech Corpus for Chadian Arabic</h3>
+          <p class="text-gray-600 dark:text-gray-300" data-i18n="pub1_desc">Conference paper in preparation.</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-700 p-7 rounded-xl shadow-sm">
+          <h3 class="text-xl font-bold mb-2">Automatic Code Generation from UML Diagrams using LLMs and MDE</h3>
+          <p class="text-gray-600 dark:text-gray-300" data-i18n="pub2_desc">Master research project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center"><span data-i18n="contact_title">Get In Touch</span></h2>
+
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
+          <h3 class="text-2xl font-semibold mb-6" data-i18n="contact_info">Contact Information</h3>
+
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <i class="fas fa-envelope text-primary-light dark:text-primary-dark mt-1 mr-4"></i>
+              <div>
+                <h4 class="font-semibold">Email</h4>
+                <p class="text-gray-600 dark:text-gray-300">younousaboukary.acheikh@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-primary-light dark:text-primary-dark mt-1 mr-4"></i>
+              <div>
+                <h4 class="font-semibold" data-i18n="location">Location</h4>
+                <p class="text-gray-600 dark:text-gray-300">N'Djamena, Chad</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex space-x-4">
+            <a href="https://github.com/AcheikhYounous" target="_blank" class="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/acheikh-younous-aboukary-5050a1364/" target="_blank" class="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">RG</a>
+            <a href="#" class="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+        </div>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
+          <div class="mb-5">
+            <label for="name" class="block mb-2 font-medium" data-i18n="form_name">Name</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-light">
+          </div>
+
+          <div class="mb-5">
+            <label for="email" class="block mb-2 font-medium">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-light">
+          </div>
+
+          <div class="mb-5">
+            <label for="subject" class="block mb-2 font-medium" data-i18n="form_subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-light">
+          </div>
+
+          <div class="mb-5">
+            <label for="message" class="block mb-2 font-medium" data-i18n="form_message">Message</label>
+            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-light"></textarea>
+          </div>
+
+          <button type="submit" class="w-full px-6 py-3 bg-primary-light dark:bg-primary-dark text-white rounded-lg hover:opacity-90">
+            <span data-i18n="send_message">Send Message</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-10">
+    <div class="container mx-auto px-6 text-center">
+      <a href="#home" class="text-2xl font-bold gradient-text">ACHEIKH YOUNOUS ABOUKARY</a>
+      <p class="mt-3 text-gray-600 dark:text-gray-300">© 2026. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        nav_home: "Home", nav_about: "About", nav_education: "Education", nav_experience: "Experience",
+        nav_projects: "Projects", nav_teaching: "Teaching", nav_publications: "Publications", nav_contact: "Contact",
+        hero_small: "Teaching, Research and Innovation in AI", hero_hi: "Hi, I'm",
+        hero_title: "AI Researcher | Lecturer | Software Developer",
+        hero_desc: "I am a lecturer and AI researcher from Chad, specializing in Artificial Intelligence, Natural Language Processing and Software Engineering.",
+        download_cv: "Download CV", view_projects: "View Projects", contact_me: "Contact Me",
+        about_title: "About", about_me: "Me", who_title: "Who I Am",
+        about_desc: "I am a lecturer and AI researcher from Chad with a strong interest in Natural Language Processing, Large Language Models, Speech Technologies and Software Engineering. My current research focuses on low-resource African languages, particularly Chadian Arabic, and the development of AI systems for education and digital inclusion.",
+        about_card_1: "Research on low-resource languages and speech technologies.",
+        teaching_word: "Teaching", about_card_2: "Computer science courses, tutorials and academic materials.",
+        software_word: "Software", about_card_3: "Software engineering, web development and academic tools.",
+        education_title: "Education", msc_title: "Master of Science in Artificial Intelligence", msc_school: "University of Dschang, Cameroon",
+        msc_mention: "Mention: Very Good", msc_desc: "Master's degree focused on artificial intelligence, machine learning, natural language processing and software engineering.",
+        highlights: "Highlights", msc_h1: "Master thesis on automatic Java code generation from UML class diagrams using MDE and LLMs.",
+        msc_h2: "Research interests: NLP, LLMs, speech technologies and low-resource languages.",
+        licence_title: "Bachelor's Degree in Computer Science", licence_school: "University of N'Djamena, Chad",
+        licence_desc: "Undergraduate training in programming, databases, algorithms, information systems and software development.",
+        licence_h1: "Solid foundations in programming, databases and software engineering.",
+        licence_h2: "Development of academic and practical computer science projects.",
+        experience_title: "Experience", exp1_title: "Lecturer in Computer Science", exp1_org: "University of Sahara of Faya (UNISAF), Chad",
+        present: "Present", exp1_desc: "Teaching computer science courses and preparing academic materials including courses, tutorials, practical work and exams.",
+        courses: "Courses", exp2_title: "Software Developer", exp2_desc: "Development of web and desktop applications, including school management systems and academic digital tools.",
+        projects_title: "Featured Projects", project_chadvoice: "Speech dataset for Chadian Arabic towards speech recognition and French translation systems.",
+        project_uml: "Automatic Java code generation from UML class diagrams using a hybrid MDE and LLM approach.",
+        project_school_title: "School Management System", project_school: "A management system deployed for schools, covering students, classes, results and administration.",
+        project_unisaf: "Digital transformation initiative for e-learning, digital library and AI infrastructure at UNISAF.",
+        teaching_title: "Teaching Materials", pdf_course: "Course PDF / TD / Exams", skills_title: "Skills",
+        publications_title: "Research & Publications", pub1_desc: "Conference paper in preparation.", pub2_desc: "Master research project.",
+        contact_title: "Get In Touch", contact_info: "Contact Information", location: "Location",
+        form_name: "Name", form_subject: "Subject", form_message: "Message", send_message: "Send Message"
+      },
+      fr: {
+        nav_home: "Accueil", nav_about: "À propos", nav_education: "Formation", nav_experience: "Expérience",
+        nav_projects: "Projets", nav_teaching: "Enseignement", nav_publications: "Publications", nav_contact: "Contact",
+        hero_small: "Enseignement, recherche et innovation en IA", hero_hi: "Bonjour, je suis",
+        hero_title: "Chercheur en IA | Enseignant | Développeur logiciel",
+        hero_desc: "Je suis enseignant et chercheur en intelligence artificielle au Tchad, spécialisé en IA, traitement automatique du langage naturel et génie logiciel.",
+        download_cv: "Télécharger CV", view_projects: "Voir les projets", contact_me: "Me contacter",
+        about_title: "À propos", about_me: "de moi", who_title: "Qui suis-je ?",
+        about_desc: "Je suis enseignant et chercheur en intelligence artificielle au Tchad, avec un intérêt particulier pour le traitement automatique du langage naturel, les grands modèles de langage, les technologies vocales et le génie logiciel. Mes recherches portent sur les langues africaines peu dotées, notamment l’arabe tchadien, ainsi que sur le développement de systèmes d’IA pour l’éducation et l’inclusion numérique.",
+        about_card_1: "Recherche sur les langues peu dotées et les technologies vocales.",
+        teaching_word: "Enseignement", about_card_2: "Cours d’informatique, TD/TP et supports pédagogiques.",
+        software_word: "Logiciel", about_card_3: "Génie logiciel, développement web et outils académiques.",
+        education_title: "Formation", msc_title: "Master en Intelligence Artificielle", msc_school: "Université de Dschang, Cameroun",
+        msc_mention: "Mention : Très bien", msc_desc: "Formation de Master centrée sur l’intelligence artificielle, l’apprentissage automatique, le traitement automatique du langage naturel et le génie logiciel.",
+        highlights: "Points importants", msc_h1: "Mémoire de Master sur la génération automatique de code Java à partir de diagrammes de classes UML avec une approche MDE et LLM.",
+        msc_h2: "Centres d’intérêt : NLP, LLMs, technologies vocales et langues peu dotées.",
+        licence_title: "Licence en Informatique", licence_school: "Université de N’Djamena, Tchad",
+        licence_desc: "Formation de base en programmation, bases de données, algorithmique, systèmes d’information et développement logiciel.",
+        licence_h1: "Bases solides en programmation, bases de données et génie logiciel.",
+        licence_h2: "Réalisation de projets académiques et pratiques en informatique.",
+        experience_title: "Expérience", exp1_title: "Enseignant en Informatique", exp1_org: "Université du Sahara de Faya (UNISAF), Tchad",
+        present: "Présent", exp1_desc: "Enseignement des cours d’informatique et préparation de supports académiques : cours, TD, TP et examens.",
+        courses: "Cours", exp2_title: "Développeur logiciel", exp2_desc: "Développement d’applications web et desktop, notamment des systèmes de gestion scolaire et des outils numériques académiques.",
+        projects_title: "Projets principaux", project_chadvoice: "Corpus vocal pour l’arabe tchadien destiné à la reconnaissance vocale et à la traduction vers le français.",
+        project_uml: "Génération automatique de code Java à partir de diagrammes de classes UML avec une approche hybride MDE et LLM.",
+        project_school_title: "Système de gestion scolaire", project_school: "Système de gestion déployé dans des établissements scolaires pour les élèves, classes, résultats et administration.",
+        project_unisaf: "Initiative de transformation numérique pour l’e-learning, la bibliothèque numérique et l’infrastructure IA à l’UNISAF.",
+        teaching_title: "Supports d’enseignement", pdf_course: "Cours PDF / TD / Examens", skills_title: "Compétences",
+        publications_title: "Recherche & Publications", pub1_desc: "Article de conférence en préparation.", pub2_desc: "Travail de recherche de Master.",
+        contact_title: "Contact", contact_info: "Informations de contact", location: "Localisation",
+        form_name: "Nom", form_subject: "Sujet", form_message: "Message", send_message: "Envoyer le message"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem('language', lang);
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      if (lang === 'en') {
+        document.getElementById('btn-en')?.classList.add('active');
+        document.getElementById('btn-en-mobile')?.classList.add('active');
+      } else {
+        document.getElementById('btn-fr')?.classList.add('active');
+        document.getElementById('btn-fr-mobile')?.classList.add('active');
+      }
+    }
+
+    document.getElementById('btn-en').addEventListener('click', () => setLanguage('en'));
+    document.getElementById('btn-fr').addEventListener('click', () => setLanguage('fr'));
+    document.getElementById('btn-en-mobile').addEventListener('click', () => setLanguage('en'));
+    document.getElementById('btn-fr-mobile').addEventListener('click', () => setLanguage('fr'));
+
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    html.classList.remove('light', 'dark');
+    html.classList.add(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      html.classList.toggle('light');
+      const theme = html.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    });
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+        }
+      });
+    });
+
+    setLanguage(localStorage.getItem('language') || 'en');
+  </script>
+</body>
+</html>
